@@ -1,0 +1,5 @@
+EmployeeID,Name,Department,BasicSalary,HouseAllowance,HardshipAllowance,BankDetails
+EMP-001,John Doe,Min of Ghosting,50000,10000,10000,BANK-001
+EMP-001,John Doe,Min of Ghosting,50000,10000,10000,BANK-001
+EMP-002,High Earner,Min of Inflated,80000,30000,20000,BANK-002
+EMP-003,Honest Worker,Min of Truth,30000,5000,5000,BANK-003

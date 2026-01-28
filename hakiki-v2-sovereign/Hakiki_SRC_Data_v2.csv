@@ -1,0 +1,7 @@
+National_ID,Full_Name,Ministry,Basic_Salary,Special_Allowance,Bank_Account_No,KRA_PIN,Job_Group
+EMP-001,John Doe,Ministry of Education,45000,10000,BK-789012,A001234567X,G
+EMP-002,Jane Smith,Ministry of Health,55000,15000,BK-789012,A001234567Y,H
+EMP-003,Ghost User,Ministry of Education,45000,20000,BK-111222,A001234567Z,G
+EMP-001,John Doe,Ministry of Education,45000,10000,BK-789012,A001234567X,G
+EMP-005,High Earner,Ministry of Infrastructure,150000,50000,BK-333444,A009999999K,P
+EMP-006,Suspicious Actor,Ministry of Health,30000,25000,BK-789012,A008888888L,F
