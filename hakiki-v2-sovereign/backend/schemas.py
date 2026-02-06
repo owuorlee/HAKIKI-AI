@@ -1,7 +1,39 @@
 from pydantic import BaseModel
-from typing import Optional, List, Any
+from typing import List, Optional, Any, Dict
 
-# Auth Schemas
+# --- CHAT MODELS ---
+# Used by the Sovereign Brain (Llama 3)
+class ChatRequest(BaseModel):
+    query: str
+
+class ChatResponse(BaseModel):
+    response: str
+    timestamp: str
+
+# --- AUDIT MODELS ---
+# Used for the Audit Dashboard response
+class AuditReport(BaseModel):
+    # Frontend-friendly (camelCase)
+    totalRisk: float
+    ghostCount: int
+    fraudCases: int
+    totalRecords: int
+    status: str
+    suspects: List[Any]
+    
+    # Allow extra fields (like snake_case versions) to pass through
+    class Config:
+        extra = "allow"
+
+# --- MOBILE MODELS ---
+# (Optional: In case we re-enable mobile later)
+class CheckInPayload(BaseModel):
+    national_id: str
+    latitude: float
+    longitude: float
+    timestamp: str
+
+# --- SYSTEM REQUIRED MODELS (Recovered to prevent import errors) ---
 class Token(BaseModel):
     access_token: str
     token_type: str
@@ -9,30 +41,16 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     username: Optional[str] = None
 
-class User(BaseModel):
-    username: str
-
-# Forensic Schemas
-class AuditRequest(BaseModel):
-    scan_type: str # 'full', 'ghost', 'dipper', 'grade', 'allowance'
-
-class AuditResult(BaseModel):
-    status: str
-    metrics: dict
-    timestamp: str
-
-# Agent Schemas
 class QueryRequest(BaseModel):
     query: str
 
 class QueryResponse(BaseModel):
     trace: str
-    result: Any # String or JSON object (for DataFrame)
+    result: Any
     intent: str
 
-# Intel Schemas
 class TipInput(BaseModel):
     content: str
-    source: str = "Anonymous"
+    source: Optional[str] = "Anonymous"
     related_entity: Optional[str] = None
     ministry: Optional[str] = None
