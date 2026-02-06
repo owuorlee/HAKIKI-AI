@@ -1,0 +1,4 @@
+EmployeeID,Name,Department,BasicSalary,HouseAllowance,HardshipAllowance,BankDetails
+EMP-001,John Doe,Education,45000,10000,0,BK-789012
+EMP-001,John Doe,Education,45000,10000,0,BK-789012
+EMP-005,High Earner,Infrastructure,150000,80000,50000,BK-333444

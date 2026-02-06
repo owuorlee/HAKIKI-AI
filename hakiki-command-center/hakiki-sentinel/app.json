@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "HAKIKI Sentinel",
+    "slug": "hakiki-sentinel",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "scheme": "hakiki-sentinel",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#006400"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ke.go.hakiki.sentinel",
+      "infoPlist": {
+        "NSCameraUsageDescription": "HAKIKI Sentinel requires camera access for biometric verification and proof of presence.",
+        "NSLocationWhenInUseUsageDescription": "HAKIKI Sentinel requires location access to verify you are at your assigned duty station."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#006400"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "ke.go.hakiki.sentinel",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "HAKIKI Sentinel requires camera access for biometric verification."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "HAKIKI Sentinel requires location to verify duty station presence."
+        }
+      ]
+    ]
+  }
+}
